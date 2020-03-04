@@ -1,0 +1,47 @@
+*** Strings ***
+
+Because most programs define and gather some sort of data, and then do something
+useful with it, it helps to classify different types of data. The first data
+type we'll look at is the sting. Stings are quite simple at first glance, but
+you can use them in many different ways.
+a string simply a series of characters. Anything inside quotes is considered
+a string in Python, and you can use single or double quotes around your string
+like this:
+	"This is a string"
+	'This is also a string.'
+
+--- Changing case in a string with methods ---
+
+One of the simplest tasks you can do with strings is change the case of the 
+words in a string.
+
+	name "ada lovelace"
+	print(name.title())
+
+	>>> Ada Lovelace
+
+In this example, the lowercase string "ada lovelace" is stored in the variable
+name. The method title() appears after the variable in the print() statement.
+A method is an action that Python can perform on a piece of data. The dot (.)
+after name in name.title() tells Python to make the tittle() method act on the
+variable name. Every method is followed by a set of parentheses, because methods
+often need additional information to do their work.
+
+--- Combining or concatenating strings ---
+
+It's often useful to combine strings. For example, you might want to store a
+first name and a last name in separate variables, and then combine them when you
+want to display someone's full name:
+
+	first_name = "ada"
+	last_name = "lovelace"
+	full_name = first_name + " " + last_name
+	message = "Hello, " + full_name.title() + "!"
+
+	print(message)
+
+	>>> Hello, Ada Lovelace!
+
+This method of combining strings is called concatenation. You can use 
+concatenation to compose complete messages using the information you've 
+stored in a variable.
