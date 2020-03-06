@@ -1,0 +1,5 @@
+*** Numbers ***
+
+--- Avoiding type errors with the str() function ---
+
+str() function, tells python to represent non-string values as strings.

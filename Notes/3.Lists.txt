@@ -1,0 +1,35 @@
+*** Lists ***
+
+A list is a collection of items in a particular order. you can make a list that
+includes the letters of the alphabet, the digits from 0-9, or the names of all
+the people in your family.
+
+In Python, square brackets ([]) indicate a list, and individual elements in the
+list are separated by commas. Here's a simple example of a list that contains
+a few kinds oof bicycles:
+
+	bicycles = ['trek', 'cannondale', 'redline', 'specialized']
+	print(bicycles)
+
+	>>> ['trek', 'cannondale', 'redline', 'specialized']
+
+--- Accesing elements in a list ---
+
+Lists are ordered collections, so ypu can access any element in a list by
+telling Python he position, or index, of the item desired.
+
+	bicycles = ['trek', 'cannondale', 'redline', 'specialized']
+        print(bicycles[0])
+
+	>>> trek
+
+Python has a special syntax for accessing tthe las element in a list. By asking
+for the item at index -1, Python always returns tthe las item in the list:
+
+	bicycles = ['trek', 'cannondale', 'redline', 'specialized']
+        print(bicycles[-1])
+
+        >>> specialized
+
+The index -2 returns the second item from the end of the listt, the index -3
+returns the third itetm from the end, and so forth.
