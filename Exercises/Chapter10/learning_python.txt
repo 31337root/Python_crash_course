@@ -1,0 +1,3 @@
+10-1. Learning Python: Open a blak file in your tect editor and write a few
+lines summarizing what you've learned about Python so far. Start each line
+with the phrase In python you can...
