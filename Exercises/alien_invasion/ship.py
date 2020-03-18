@@ -8,7 +8,7 @@ class Ship():
         self.ai_settings = ai_settings
 
         # Load the ship image and gets its rect.
-        self.image = pygame.image.load("images/ship.bmp")
+        self.image = pygame.image.load("images/ship.png")
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
 
@@ -39,20 +39,15 @@ class Ship():
         """Draw the ship at its current location."""
         self.screen.blit(self.image, self.rect)
 
-class BadShip():
-
-    def __init__(self, screen):
-        """Initialize the ship and set its starting position."""
+class Background():
+    """Set a background"""
+    def __init__(self, image_file, location, screen):
+        """Initialize the background and set its position."""
         self.screen = screen
-
-        # Load the ship image and gets its rect.
-        self.image = pygame.image.load("images/bad_ship.bmp")
+        self.image = pygame.image.load(image_file)
         self.rect = self.image.get_rect()
-        self.screen_rect = screen.get_rect()
-
-        # Start each new ship at the center of the screen.
-        self.rect.centerx = self.screen_rect.centerx
+        self.rect.left, self.rect.top = location
 
     def blitme(self):
-        """Draw the ship at its current location."""
+        """Draw the background at tis location."""
         self.screen.blit(self.image, self.rect)
