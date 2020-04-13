@@ -1,6 +1,65 @@
-<p>
-  <a href="{% url 'learning_logs:index' %}">learning Log</a>
-  <a href="{% url 'learning_logs:topics' %}">Topics</a>
-</p>
+{% load bootstrap3 %}
+{% load bootstrap4 %}
 
-{% block content %}{% endblock content %}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=defice-width, initial-scale=1">
+
+    <title>31337root</title>
+
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+  </head>
+
+  <body class="p-3 mb-2 bg-dark text-white">
+
+    <!-- Static navbar -->
+    <nav class="navbar navbar-dark bg-dark navbar-fixed-top">
+      <div class="container">
+
+        <div class="navbar-header">
+	  <button type="button" class="navbar-toggler"
+	    data-toggle="collapse" data-target="#navbar"
+	    aria-expanded="false" aria-controls="navbar">
+              <span class="navbar-toggler-icon"></span>
+	  </button>
+	  <a class="navbar-brand text-warning" href="{% url 'learning_logs:index' %}">
+	    31337root</a>
+	</div>
+
+	<div id="navbar" class="navbar-collapse collapse">
+	  <ul class="nav navbar-nav">
+	    <li><a href="{% url 'learning_logs:topics' %}" class="text-warning">Topics</a></li>
+	  </ul>
+
+	  <ul class="nav navbar-nav navbar-right">
+            {% if user.is_authenticated %}
+     	      <li><a class="text-warning">Hello, {{ user.username }}.</a></li>
+	      <li><a href="{% url "users:logout" %}" class="text-warning">log out</a></li>
+            {% else %}
+	      <li><a href="{% url "users:register" %}" class="text-warning">register</a></li>
+	      <li><a href="{% url "users:login" %}" class="text-warning">log in</a></li>
+            {% endif %}
+	  </ul>
+	</div><!--/.nav-collapse -->
+
+      </div>
+    </nav>
+
+    <div class="container p-3 mb-2 bg-dark text-white">
+
+      <div class="page-header">
+        {% block header %}{% endblock header %}
+      </div>
+      <div>
+        {% block content %}{% endblock content %}
+      </div>
+
+    </div> <!-- /container -->
+
+  </body>
+</html>

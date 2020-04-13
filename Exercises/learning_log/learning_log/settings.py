@@ -38,8 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # Third party apps
+    "bootstrap3",
+    "bootstrap4",
+
     # My apps
     "learning_logs",
+    "users",
 ]
 
 MIDDLEWARE = [
@@ -121,3 +126,36 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# My settings
+LOGIN_URL = "/users/login/"
+
+# Settings for django-bootstrap3
+BOOTSTRAP3 = {
+        "include_jquery": True,
+        }
+
+# Settings for django-bootstrap4
+BOOTSTRAP4 = {
+        "include_jquery":True,
+        }
+
+# Heroku settings
+if os.getcwd() == "/app":
+    import dj_database_url
+    DATABASES = {
+            "defaut": dj_database_url.config(default="postgres://localhost")
+            }
+
+    # Honor the "X-Forwarded-Proto" header gor request.is_secure().
+    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+
+    # Allow all host headers.
+    ALLOWED_HOSTS = ['*']
+
+    # Static asset configuration
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    STATIC_ROOT = "staticfiles"
+    STATICFILES_DIRS = (
+            os.path.join(BASE_DIR, "static"),
+            )

@@ -1,7 +1,36 @@
 {% extends "learning_logs/base.html" %}
 
+{% block header %}
+  <div class="jumbotron bg-dark text-white">
+    <h1>Track your learning.</h1>
+  </div>
+{% endblock header %}
+
 {% block content %}
-  <p>Learning Log helps you keep track of your learning, for any topic you're 
-  learning about.</p>
+  <h2>
+    <a href="{% url "users:register" %}" class="text-warning">Register an account</a> to make
+    your own Learning Log, and list the topics you're learning about.
+  </h2>
+  <h2>
+    Whenever you learn something new about a topic, make an entry
+    summarizing what you've learned.
+  </h2>
+
+  <div class="jumbotron bg-dark text-white">
+    <h2>This is my track</h2>
+    <h4>Where I record every book and resource I study</h4>
+    <h3><a href="/topics/4/" class="text-warning">Software Engineering</a></h3>
+    <h3><a href="/topics/5/" class="text-warning">Business Administration</a></h3>
+    <h3><a href="/topics/6/" class="text-warning">Marketing</a></h3>
+    <h3><a href="/topics/7/" class="text-warning">Economics</a></h3>
+    <h3><a href="/topics/8/" class="text-warning">Entrepreneur</a></h3>
+    <p>
+      IG: <a href="https://www.instagram.com/31337root/" class="text-warning">@31337root</a><br/>
+      Facebook: <a href="https://www.facebook.com/31337root" class="text-warning">@31337root</a><br/>
+      GitHub: <a href="https://github.com/31337root" class="text-warning">@31337root</a><br/>
+      LinkedIn: <a href="https://www.linkedin.com/in/31337root/" class="text-warning">Omar Giotto Martínez Bermúdez
+      </a><br/>
+    </p>
+  </div>
 
 {% endblock content%}
