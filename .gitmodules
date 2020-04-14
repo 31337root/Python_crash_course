@@ -1,0 +1,6 @@
+[submodule "Exercises/Exercises/learning_log"]
+	path = Exercises/Exercises/learning_log
+	url = https://github.com/31337root/learning_log.git
+[submodule "Exercises/learning_log"]
+	path = Exercises/learning_log
+	url = https://github.com/31337root/learning_log.git
